@@ -12,9 +12,13 @@ class User:
 
     def generate_report(self):
         print(f"Fitness Report for {self.name}:")
+        total_calories = 0
         for workout in self.workouts:
-            print(f"- {workout.name}: {len(workout.exercises)} exercises")
+            calories = workout.total_calories_burned()
+            total_calories += calories
+            print(f"- {workout.name} ({workout.date}): {len(workout.exercises)} exercises, {calories} kcal burned")
         print(f"Total Workouts: {len(self.workouts)}")
+        print(f"Total Calories Burned: {total_calories} kcal")
 
 
 class Meal:
