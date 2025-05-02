@@ -17,6 +17,19 @@ class User:
         print(f"Total Workouts: {len(self.workouts)}")
 
 
+class Meal:
+    def __init__(self, name, calories, protein, carbs, fats):
+        self.name = name
+        self.calories = calories
+        self.protein = protein
+        self.carbs = carbs
+        self.fats = fats
+
+    def __str__(self):
+        return (f"Meal: {self.name}, Calories: {self.calories}, Protein: {self.protein}g, "
+                f"Carbs: {self.carbs}g, Fats: {self.fats}g")
+
+
 class Workout:
     def __init__(self, name, date):
         self.name = name
