@@ -77,3 +77,5 @@ if __name__ == "__main__":
 
     # Generate a fitness report
     user.generate_report()
+    meal1=Meal(name="Breakfast ", Calories=1000, protein=400, carbs=70, fats=20) 
+    meal1=Meal(name="Lunch ", Calories=2000, protein=300, carbs=75, fats=25) 
