@@ -1,3 +1,30 @@
+class NutritionPlan:
+    def __init__(self):
+        self.meals = []
+
+    def add_meal(self, meal):
+        self.meals.append(meal)
+        print(f"Meal '{meal.name}' added to the nutrition plan.")
+
+    def generate_nutrition_report(self):
+        print("Nutrition Report:")
+        total_calories = 0
+        total_protein = 0
+        total_carbs = 0
+        total_fats = 0
+        for meal in self.meals:
+            total_calories += meal.calories
+            total_protein += meal.protein
+            total_carbs += meal.carbs
+            total_fats += meal.fats
+            print(f"- {meal}")
+        print(f"Total Meals: {len(self.meals)}")
+        print(f"Total Calories: {total_calories}")
+        print(f"Total Protein: {total_protein}g")
+        print(f"Total Carbs: {total_carbs}g")
+        print(f"Total Fats: {total_fats}g")
+
+
 class User:
     def __init__(self, name, age, weight, height):
         self.name = name
@@ -77,5 +104,14 @@ if __name__ == "__main__":
 
     # Generate a fitness report
     user.generate_report()
-    meal1=Meal(name="Breakfast ", Calories=1000, protein=400, carbs=70, fats=20) 
-    meal1=Meal(name="Lunch ", Calories=2000, protein=300, carbs=75, fats=25) 
+
+    # Create a nutrition plan and add meals
+    plan = NutritionPlan()
+    meal1 = Meal(name="Breakfast", calories=1000, protein=40, carbs=70, fats=20)
+    meal2 = Meal(name="Lunch", calories=2000, protein=30, carbs=75, fats=25)
+
+    plan.add_meal(meal1)
+    plan.add_meal(meal2)
+
+    # Generate nutrition report
+    plan.generate_nutrition_report()
