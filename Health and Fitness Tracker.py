@@ -84,6 +84,21 @@ class Exercise:
         self.calories_burned = calories_burned
 
 
+class WeightLog:
+    def __init__(self):
+        self.weights = []
+
+    def add_weight(self, date, weight):
+        self.weights.append((date, weight))
+        print(f"Weight {weight} kg logged on {date}.")
+
+    def generate_weight_report(self):
+        print("Weight Report:")
+        for date, weight in self.weights:
+            print(f"- {date}: {weight} kg")
+        print(f"Total Entries: {len(self.weights)}")
+
+
 # Example usage:
 if __name__ == "__main__":
     # Create a user
@@ -115,3 +130,11 @@ if __name__ == "__main__":
 
     # Generate nutrition report
     plan.generate_nutrition_report()
+
+    # Create a weight log and add weights
+    weight_log = WeightLog()
+    weight_log.add_weight(date="2023-10-01", weight=75)
+    weight_log.add_weight(date="2023-10-02", weight=74.5)
+
+    # Generate weight report
+    weight_log.generate_weight_report()
